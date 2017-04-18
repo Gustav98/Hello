@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function ex4(vetPal){
+                var ul = document.createElement("ul");
+                for(var i=0; i<vetPal.length;i++){
+                    var li = document.createElement("li");
+                    li.innerHTML = vetPal[i];
+                    ul.appendChild(li);
+                }
+                document.body.appendChild(ul);
+            }
+        
+            function teste4(){
+                ex4(["Ola ", "Mundo ", "JS"]);
+            }
+        
+            function ex2(inp){
+                var d1 = document.getElementById("d1");
+                var aux = ""
+                for(var i=0; i<inp.value.length;i++){
+                    aux = inp.value[i] + aux;
+                }
+                d1.innerHTML = aux;
+            }
+        
+            function teste() {
+                var x = document.querySelectorAll(".classe1 li");
+                for(var i=0; i<x.length;i++){
+                    x[i].style.color = "blue";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="classe1">
+	        <ul>
+    	        <li>LI1</li>
+                <li>LI2</li>
+            </ul>
+        </div>
+        <ul>
+    	    <li>LI3</li>
+            <li>LI4</li>
+        </ul>
+        <button onclick="teste()">Click</button>
+        <br>
+        <input type="text" name="texto1" id="t1" oninput="ex2(this)"/>
+        <div id="d1"></div>
+        <button onclick="teste4()">Click</button>
+    </body>
+</html>
